@@ -14,9 +14,9 @@ def get_product_list(page, campaign_id, access_token):
     """Получить список товаров из Яндекс Маркета.
 
     Args:
-        page: Токен страницы для пагинации.
-        campaign_id: Идентификатор кампании.
-        access_token: Токен доступа к API.
+        page (str): Токен страницы для пагинации.
+        campaign_id (str): Идентификатор кампании.
+        access_token (str): Токен доступа к API.
 
     Returns:
         dict: Результат запроса с информацией о товарах.
@@ -46,9 +46,9 @@ def update_stocks(stocks, campaign_id, access_token):
     """Обновить остатки товаров на Яндекс Маркет.
 
     Args:
-        stocks: Список остатков для обновления.
-        campaign_id: Идентификатор кампании.
-        access_token: Токен доступа к API.
+        stocks (list): Список остатков для обновления.
+        campaign_id (str): Идентификатор кампании.
+        access_token (str): Токен доступа к API.
 
     Returns:
          dict: Результат запроса с подтверждением обновления остатков.
@@ -75,12 +75,12 @@ def update_price(prices, campaign_id, access_token):
     """Обновить цены товаров на Яндекс Маркет.
 
     Args:
-        prices: Список цен для обновления.
-        campaign_id: Идентификатор кампании.
-        access_token: Токен доступа к API.
+        prices (list): Список цен для обновления.
+        campaign_id (str): Идентификатор кампании.
+        access_token (str): Токен доступа к API.
 
     Returns:
-        Результат запроса с подтверждением обновления цен.
+        dict: Результат запроса с подтверждением обновления цен.
 
     Raises:
         requests.exceptions.HTTPError: Если произошла ошибка при выполнении HTTP-запроса.
@@ -104,8 +104,8 @@ def get_offer_ids(campaign_id, market_token):
     """Получить артикулы товаров кампании на Яндекс Маркет.
 
     Args:
-        campaign_id: Идентификатор кампании.
-        market_token: Токен доступа к API Яндекс Маркета.
+        campaign_id (str): Идентификатор кампании.
+        market_token (str): Токен доступа к API Яндекс Маркета.
 
     Returns:
         list: Список артикулов товаров.
@@ -131,9 +131,9 @@ def create_stocks(watch_remnants, offer_ids, warehouse_id):
     """Создать список остатков для обновления на Яндекс Маркет.
 
     Args:
-        watch_remnants: Список остатков часов.
-        offer_ids: Список артикулов товаров.
-        warehouse_id: Идентификатор склада.
+        watch_remnants (list): Список остатков часов.
+        offer_ids (list): Список артикулов товаров.
+        warehouse_id (str): Идентификатор склада.
 
     Returns:
         list: Список остатков для обновления.
@@ -186,8 +186,8 @@ def create_prices(watch_remnants, offer_ids):
     """Создать список цен для обновления на Яндекс Маркет.
 
     Args:
-        watch_remnants: Список остатков часов.
-        offer_ids: Список артикулов товаров.
+        watch_remnants (list): Список остатков часов.
+        offer_ids (list): Список артикулов товаров.
 
     Returns:
         list: Список цен для обновления.
@@ -215,9 +215,9 @@ async def upload_prices(watch_remnants, campaign_id, market_token):
     """Загрузить цены на Яндекс Маркет.
 
     Args:
-        watch_remnants: Список остатков часов.
-        campaign_id: Идентификатор кампании.
-        market_token: Токен доступа к API Яндекс Маркета.
+        watch_remnants (list): Список остатков часов.
+        campaign_id (str): Идентификатор кампании.
+        market_token (str): Токен доступа к API Яндекс Маркета.
 
     Returns:
         list: Список загруженных цен.
@@ -236,10 +236,10 @@ async def upload_stocks(watch_remnants, campaign_id, market_token, warehouse_id)
     """Загрузить остатки на Яндекс Маркет.
 
     Args:
-        watch_remnants: Список остатков часов.
-        campaign_id: Идентификатор кампании.
-        market_token: Токен доступа к API Яндекс.Маркета.
-        warehouse_id: Идентификатор склада.
+        watch_remnants (list): Список остатков часов.
+        campaign_id (str): Идентификатор кампании.
+        market_token (str): Токен доступа к API Яндекс.Маркета.
+        warehouse_id (str): Идентификатор склада.
 
     Returns:
         tuple: Два списка - непустые остатки и все остатки, подготовленные для загрузки.

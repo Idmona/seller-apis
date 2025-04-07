@@ -15,9 +15,9 @@ def get_product_list(last_id, client_id, seller_token):
     """ Получить список товаров магазина Ozon.
 
     Args:
-        last_id: Последний идентификатор товара для пагинации.
-        client_id: Идентификатор клиента.
-        seller_token: Токен продавца.
+        last_id (str): Последний идентификатор товара для пагинации.
+        client_id (str): Идентификатор клиента.
+        seller_token (str): Токен продавца.
 
     Returns:
         dict: Результат запроса к API Ozon со списком товаров с идентификаторами, артикулами и общей информацией.
@@ -47,8 +47,8 @@ def get_offer_ids(client_id, seller_token):
     """ Получить список артикулов товаров магазина Ozon.
 
     Args:
-        client_id: Идентификатор клиента.
-        seller_token: Токен продавца.
+        client_id (str): Идентификатор клиента.
+        seller_token (str): Токен продавца.
 
     Returns:
         list: Список артикулов товаров.
@@ -72,9 +72,9 @@ def update_price(prices: list, client_id, seller_token):
     """Обновить цены товаров.
 
     Args:
-        prices: Список цен для обновления.
-        client_id: Идентификатор клиента.
-        seller_token: Токен продавца.
+        prices (list): Список цен для обновления.
+        client_id (str): Идентификатор клиента.
+        seller_token (str): Токен продавца.
 
     Returns:
         dict: Результат запроса на обновление цен.
@@ -97,9 +97,9 @@ def update_stocks(stocks: list, client_id, seller_token):
     """Обновить остатки.
 
     Args:
-        stocks: Список остатков для обновления.
-        client_id: Идентификатор клиента.
-        seller_token: Токен продавца.
+        stocks (list): Список остатков для обновления.
+        client_id (str): Идентификатор клиента.
+        seller_token (str): Токен продавца.
 
     Returns:
         dict: Результат запроса на обновление остатков.
@@ -151,8 +151,8 @@ def create_stocks(watch_remnants, offer_ids):
     """Создает список остатков для обновления на Ozon.
 
     Args:
-        watch_remnants: Список остатков часов.
-        offer_ids: Список артикулов товаров магазина.
+        watch_remnants (list): Список остатков часов.
+        offer_ids (list): Список артикулов товаров магазина.
 
     Returns:
         list: Список остатков для обновления.
@@ -180,8 +180,8 @@ def create_prices(watch_remnants, offer_ids):
     """Создает список цен для обновления на Ozon.
 
         Args:
-            watch_remnants: Список остатков часов.
-            offer_ids: Список артикулов товаров магазина.
+            watch_remnants (list): Список остатков часов.
+            offer_ids (list): Список артикулов товаров магазина.
 
         Returns:
             list: Список цен для обновления.
@@ -204,7 +204,7 @@ def price_conversion(price: str) -> str:
     """Преобразовать цену из строки в числовой формат.
 
     Args:
-        price: Цена в строковом формате
+        price (str): Цена в строковом формате
 
     Returns:
         str: Цена в числовом формате.
@@ -220,8 +220,8 @@ def divide(lst: list, n: int):
     """Разделить список lst на части по n элементов
 
     Args:
-        lst: Список для разделения.
-        n: Количество элементов в каждой части.
+        lst (list): Список для разделения.
+        n (int): Количество элементов в каждой части.
 
     Yields:
         list: Часть списка длиной не более n элементов.
@@ -235,9 +235,9 @@ async def upload_prices(watch_remnants, client_id, seller_token):
     """Загрузить цены на Озон.
 
     Args:
-        watch_remnants: Список остатков часов.
-        client_id: Идентификатор клиента.
-        seller_token: Токен продавца.
+        watch_remnants (list): Список остатков часов.
+        client_id (str): Идентификатор клиента.
+        seller_token (str): Токен продавца.
 
     Returns:
         list: Список обновленных цен.
